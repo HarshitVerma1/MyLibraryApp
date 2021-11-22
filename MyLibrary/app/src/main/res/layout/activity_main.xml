@@ -7,72 +7,9 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/Java"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:padding="10dp"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="3dp">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Java Programming"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/Python"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:padding="10dp"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="3dp">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Python Programming"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/JavaScript"
-        android:layout_margin="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:padding="10dp"
-
-        app:cardCornerRadius="5dp"
-        app:cardElevation="3dp">
-
-        <com.google.android.material.textview.MaterialTextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="JavaScript Programming"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-    </com.google.android.material.card.MaterialCardView>
-
+        android:layout_height="match_parent" />
 </LinearLayout>

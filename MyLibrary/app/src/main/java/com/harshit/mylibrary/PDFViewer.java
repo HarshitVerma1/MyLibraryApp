@@ -8,13 +8,15 @@ import com.github.barteksc.pdfviewer.PDFView;
 
 public class PDFViewer extends AppCompatActivity {
     private PDFView pdfView;
+    String type="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdfviewer);
         pdfView=findViewById(R.id.pdfView);
+        type=getIntent().getStringExtra("type");
 
-        pdfView.fromAsset("DBMS.pdf")
+        pdfView.fromAsset(type)
 //                .pages(0, 2, 1, 3, 3, 3) // all pages are displayed by default
 //                .enableSwipe(true) // allows to block changing pages using swipe
 //                .swipeHorizontal(false)

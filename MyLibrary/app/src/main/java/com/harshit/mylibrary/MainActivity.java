@@ -2,35 +2,40 @@ package com.harshit.mylibrary;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
-    private CardView javaCardview,pythonCardView,javaScriptCardView;
+    private ArrayList<BookData> list;
+    private RecyclerView recyclerView;
+    private BookAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        javaCardview=findViewById(R.id.Java);
-        javaScriptCardView=findViewById(R.id.JavaScript);
-        pythonCardView=findViewById(R.id.Python);
-        allActions();
+        list=new ArrayList<>();
+        initList();
+        recyclerView=findViewById(R.id.recyclerView);
+        adapter=new BookAdapter(this,list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
     }
 
-    private void allActions() {
-        javaCardview.setOnClickListener(v -> {
-            Intent intent=new Intent(MainActivity.this,PDFViewer.class);
-            startActivity(intent);
-        });
-        pythonCardView.setOnClickListener(v->{
-            Intent intent=new Intent(MainActivity.this,PDFViewer.class);
-            startActivity(intent);
-        });
-        javaScriptCardView.setOnClickListener(v->{
-            Intent intent=new Intent(MainActivity.this,PDFViewer.class);
-            startActivity(intent);
-        });
+    private void initList() {
+        list.add(new BookData("DataBase Management System","DBMS.pdf"));
+        list.add(new BookData("JAVA Programming","java.pdf"));
+        list.add(new BookData("Python Programming","python.pdf"));
+        list.add(new BookData("JavaScript Programming","javascript.pdf"));
+        list.add(new BookData("Android App Development","android.pdf"));
+
     }
+
+
 }
